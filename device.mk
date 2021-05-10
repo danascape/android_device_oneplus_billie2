@@ -10,6 +10,10 @@ $(call inherit-product, vendor/oneplus/billie2/billie2-vendor.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 # Screen density
 TARGET_SCREEN_HEIGHT := 720
 TARGET_SCREEN_WIDTH := 1600
