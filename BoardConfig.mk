@@ -99,6 +99,15 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
 # Sepolicy - billie
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
+# Sepolicy - Common
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+    device/qcom/sepolicy/generic/private \
+    device/qcom/sepolicy/qva/private
+
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
+    device/qcom/sepolicy/generic/public \
+    device/qcom/sepolicy/qva/public
+
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
