@@ -52,6 +52,40 @@ TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := vendor/billie2-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm4250
 
+# Kernel modules - Audio
+TARGET_MODULE_ALIASES += \
+    snd_event_dlkm.ko:audio_snd_event.ko \
+    aw87359_dlkm.ko:audio_aw87359.ko \
+    aw87529_dlkm.ko:audio_aw87529.ko \
+    rouleur_dlkm.ko:audio_rouleur.ko \
+    sia81xx_dlkm.ko:audio_sia81xx.ko \
+    wsa881x_analog_dlkm.ko:audio_wsa881x_analog.ko \
+    rouleur_slave_dlkm.ko:audio_rouleur_slave.ko \
+    bolero_cdc_dlkm.ko:audio_bolero_cdc.ko \
+    wcd937x_slave_dlkm.ko:audio_wcd937x_slave.ko \
+    q6_pdr_dlkm.ko:audio_q6_pdr.ko \
+    q6_notifier_dlkm.ko:audio_q6_notifier.ko \
+    va_macro_dlkm.ko:audio_va_macro.ko \
+    swr_ctrl_dlkm.ko:audio_swr_ctrl.ko \
+    adsp_loader_dlkm.ko:audio_adsp_loader.ko \
+    swr_dlkm.ko:audio_swr.ko \
+    wcd_core_dlkm.ko:audio_wcd_core.ko \
+    wsa881x_analog_dlkm:audio_wsa881x_analog.ko \
+    pinctrl_lpi_dlkm.ko:audio_pinctrl_lpi.ko \
+    platform_dlkm.ko:audio_platform.ko \
+    pm2250_spmi_dlkm.ko:audio_pm2250_spmi.ko \
+    usf_dlkm.ko:audio_usf.ko \
+    stub_dlkm.ko:audio_stub.ko \
+    wcd9xxx_dlkm.ko:audio_wcd9xxx.ko \
+    wcd937x_dlkm.ko:audio_wcd937x.ko \
+    q6_dlkm.ko:audio_q6.ko \
+    mbhc_dlkm.ko:audio_mbhc.ko \
+    machine_dlkm.ko:audio_machine_bengal.ko \
+    native_dlkm.ko:audio_native.ko \
+    apr_dlkm.ko:audio_apr.ko \
+    rx_macro_dlkm.ko:audio_rx_macro.ko \
+    tx_macro_dlkm.ko:audio_tx_macro.ko
+
 # DTBO partition definitions
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 
@@ -65,6 +99,9 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
+
+# Build
+BUILD_BROKEN_DUP_RULES := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
