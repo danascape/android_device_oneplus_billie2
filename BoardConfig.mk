@@ -46,45 +46,11 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
-NEED_KERNEL_MODULE_VENDOR_OVERLAY := true
+NEED_KERNEL_MODULE_SYSTEM := true
 
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := vendor/billie2-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm4250
-
-# Kernel modules - Audio
-TARGET_MODULE_ALIASES += \
-    snd_event_dlkm.ko:audio_snd_event.ko \
-    aw87359_dlkm.ko:audio_aw87359.ko \
-    aw87529_dlkm.ko:audio_aw87529.ko \
-    rouleur_dlkm.ko:audio_rouleur.ko \
-    sia81xx_dlkm.ko:audio_sia81xx.ko \
-    wsa881x_analog_dlkm.ko:audio_wsa881x_analog.ko \
-    rouleur_slave_dlkm.ko:audio_rouleur_slave.ko \
-    bolero_cdc_dlkm.ko:audio_bolero_cdc.ko \
-    wcd937x_slave_dlkm.ko:audio_wcd937x_slave.ko \
-    q6_pdr_dlkm.ko:audio_q6_pdr.ko \
-    q6_notifier_dlkm.ko:audio_q6_notifier.ko \
-    va_macro_dlkm.ko:audio_va_macro.ko \
-    swr_ctrl_dlkm.ko:audio_swr_ctrl.ko \
-    adsp_loader_dlkm.ko:audio_adsp_loader.ko \
-    swr_dlkm.ko:audio_swr.ko \
-    wcd_core_dlkm.ko:audio_wcd_core.ko \
-    wsa881x_analog_dlkm:audio_wsa881x_analog.ko \
-    pinctrl_lpi_dlkm.ko:audio_pinctrl_lpi.ko \
-    platform_dlkm.ko:audio_platform.ko \
-    pm2250_spmi_dlkm.ko:audio_pm2250_spmi.ko \
-    usf_dlkm.ko:audio_usf.ko \
-    stub_dlkm.ko:audio_stub.ko \
-    wcd9xxx_dlkm.ko:audio_wcd9xxx.ko \
-    wcd937x_dlkm.ko:audio_wcd937x.ko \
-    q6_dlkm.ko:audio_q6.ko \
-    mbhc_dlkm.ko:audio_mbhc.ko \
-    machine_dlkm.ko:audio_machine_bengal.ko \
-    native_dlkm.ko:audio_native.ko \
-    apr_dlkm.ko:audio_apr.ko \
-    rx_macro_dlkm.ko:audio_rx_macro.ko \
-    tx_macro_dlkm.ko:audio_tx_macro.ko
 
 # DTBO partition definitions
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
@@ -126,7 +92,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Partitions - Oneplus
 BOARD_ONEPLUS_DYNAMIC_PARTITIONS_PARTITION_LIST := product system
-BOARD_ONEPLUS_DYNAMIC_PARTITIONS_SIZE := 5364514816
+BOARD_ONEPLUS_DYNAMIC_PARTITIONS_SIZE := 5368709120
 
 # Partitions - Product
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
