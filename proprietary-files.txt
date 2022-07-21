@@ -104,7 +104,6 @@ product/lib64/libdpmctmgr.so
 product/lib64/libdpmfdmgr.so
 product/lib64/libdpmframework.so
 product/lib64/libdpmtcm.so
--product/priv-app/dpmserviceapp/dpmserviceapp.apk
 
 # GPS
 etc/permissions/com.qti.location.sdk.xml
@@ -172,7 +171,6 @@ etc/permissions/qti_permissions.xml
 # Radio
 etc/sysconfig/qti_whitelist.xml
 -framework/qcnvitems.jar
--product/app/datastatusnotification/datastatusnotification.apk
 -product/app/embms/embms.apk
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
 product/etc/permissions/embms.xml
